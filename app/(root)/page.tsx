@@ -13,8 +13,6 @@ export default function Home() {
   }, [isOpen, onOpen])
 
   return (
-    <main>
-      Root
-    </main>
+    null
   );
 }
