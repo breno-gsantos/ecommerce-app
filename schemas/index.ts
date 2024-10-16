@@ -24,3 +24,12 @@ export const registerSchema = z.object({
 export const formSchema = z.object({
   name: z.string().min(1, 'Required')
 })
+
+export const updateStoreSchema = z.object({
+  id: z.string().uuid(),
+  name: z.string().min(1)
+})
+
+export const deleteStoreSchema = z.object({
+  id: z.string().uuid()
+})
