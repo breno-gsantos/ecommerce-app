@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import { Navbar } from "@/components/navbar";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { ReactNode } from "react";
@@ -18,9 +19,7 @@ export default async function DashboardLayout({ children, params }: { children: 
   
   return (
     <>
-      <div>
-        This will be a navbar
-      </div>
+      <Navbar />
       {children}
     </>
   )

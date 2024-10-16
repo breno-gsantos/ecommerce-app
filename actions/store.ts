@@ -3,6 +3,7 @@
 import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { formSchema } from "@/schemas";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 export async function createStore(values: z.infer<typeof formSchema>) {
@@ -28,6 +29,8 @@ export async function createStore(values: z.infer<typeof formSchema>) {
         userId: session.user.id
       }
     });
+
+    revalidatePath('/')
 
     return {success: 'Store created!', store}
   } catch (error) {
